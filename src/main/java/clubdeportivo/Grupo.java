@@ -53,7 +53,7 @@ public class Grupo {
 	}
 	
 	public void matricular(int n) throws ClubException {
-		if (plazasLibres()< n || n<=0) {
+		if (plazasLibres() < n || n<=0) {
 			throw new ClubException("ERROR: no hay plazas libres suficientes, plazas libre: "+ plazasLibres()+ " y matriculas: "+n);
 		}
 		nmatriculados+=n;
