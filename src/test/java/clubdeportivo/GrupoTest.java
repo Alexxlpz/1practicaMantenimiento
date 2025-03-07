@@ -62,7 +62,7 @@ public class GrupoTest {
         //Arrange
         //Act
         //Assert
-        assertThrows(ClubException.class, () -> grupoBienCreado.actualizarPlazas(0));
+        assertThrows(ClubException.class, () -> grupoBienCreado.actualizarPlazas(1));
     }
 
     @Test
