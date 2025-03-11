@@ -33,15 +33,15 @@ public class ClubDeportivo {
 
 	public void anyadirActividad(String[] datos) throws ClubException {
 		try {
-<span class="nc" id="L36">			int plazas = Integer.parseInt(datos[2]);</span>
-<span class="nc" id="L37">			int matriculados = Integer.parseInt(datos[3]);</span>
-<span class="nc" id="L38">			double tarifa = Double.parseDouble(datos[4]);</span>
-<span class="nc" id="L39">			Grupo g = new Grupo(datos[0], datos[1], plazas, matriculados, tarifa);</span>
-<span class="nc" id="L40">			anyadirActividad(g);</span>
-<span class="nc" id="L41">		} catch (NumberFormatException e) {</span>
-<span class="nc" id="L42">			throw new ClubException(&quot;ERROR: formato de número incorrecto&quot;);</span>
-<span class="nc" id="L43">		}</span>
-<span class="nc" id="L44">	}</span>
+<span class="fc" id="L36">			int plazas = Integer.parseInt(datos[2]);</span>
+<span class="fc" id="L37">			int matriculados = Integer.parseInt(datos[3]);</span>
+<span class="fc" id="L38">			double tarifa = Double.parseDouble(datos[4]);</span>
+<span class="fc" id="L39">			Grupo g = new Grupo(datos[0], datos[1], plazas, matriculados, tarifa);</span>
+<span class="fc" id="L40">			anyadirActividad(g);</span>
+<span class="fc" id="L41">		} catch (NumberFormatException e) {</span>
+<span class="fc" id="L42">			throw new ClubException(&quot;ERROR: formato de número incorrecto&quot;);</span>
+<span class="fc" id="L43">		}</span>
+<span class="fc" id="L44">	}</span>
 
 	public void anyadirActividad(Grupo g) throws ClubException {
 <span class="pc bpc" id="L47" title="1 of 2 branches missed.">		if (g==null){ // ADDME: anaydido para comprobar los grupos nulos</span>
@@ -57,15 +57,15 @@ public class ClubDeportivo {
 <span class="fc" id="L57">	}</span>
 
 	public int plazasLibres(String actividad) {
-<span class="nc" id="L60">		int p = 0;</span>
-<span class="nc" id="L61">		int i = 0;</span>
-<span class="nc bnc" id="L62" title="All 2 branches missed.">		while (i &lt; ngrupos) {</span>
-<span class="nc bnc" id="L63" title="All 2 branches missed.">			if (grupos[i].getActividad().equals(actividad)) {</span>
-<span class="nc" id="L64">				p += grupos[i].plazasLibres();</span>
+<span class="fc" id="L60">		int p = 0;</span>
+<span class="fc" id="L61">		int i = 0;</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">		while (i &lt; ngrupos) {</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">			if (grupos[i].getActividad().equals(actividad)) {</span>
+<span class="fc" id="L64">				p += grupos[i].plazasLibres();</span>
 			}
-<span class="nc" id="L66">			i++;</span>
+<span class="fc" id="L66">			i++;</span>
 		}
-<span class="nc" id="L68">		return p;</span>
+<span class="fc" id="L68">		return p;</span>
 	}
 
 	public void matricular(String actividad, int npersonas) throws ClubException {

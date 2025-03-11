@@ -55,4 +55,41 @@ public class ClubDeportivoTest {
         assertEquals(res,cantidadNormal);
     }
 
+    @Test 
+    public void ClubDeportivoPlazasLibresSinGrupo(){
+        try {
+            //Arrange
+            ClubDeportivo clubSinGrupo = new ClubDeportivo("Facultad2", 3);
+            //Act
+            double res = clubSinGrupo.plazasLibres("tenis");
+            double cantidadNormal = 0;
+            //Assert
+            assertEquals(res,cantidadNormal);
+        } catch (ClubException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test 
+    public void ClubDeportivoPlazasLibresGrupoNoEncontrado(){
+
+        //Arrange
+        //Act
+        double res = clubBienCreado.plazasLibres("tens");
+        double cantidadNormal = 0;
+        //Assert
+        assertEquals(res,cantidadNormal);
+    }
+
+    @Test 
+    public void ClubDeportivoPlazasLibresConGrupo(){
+
+        //Arrange
+        //Act
+        double res = clubBienCreado.plazasLibres("tenis");
+        double cantidadNormal = 150 - 2; // hemos metido dos grupos, uno con 2 personas que pagan cada una 100 y otro grupo con 3 personas que pagan cada una 33
+        //Assert
+        assertEquals(res,cantidadNormal);
+    }
+
 }
