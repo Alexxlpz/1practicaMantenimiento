@@ -61,7 +61,7 @@ public class ClubDeportivoAltoRendimientoTest {
     }
 
     @Test 
-    public void ClubAltoRendimientoAnyadirActividadDAtosIncorrectos() throws ClubException{
+    public void ClubAltoRendimientoAnyadirActividadDatosIncorrectos() throws ClubException{
         //Arrange
         String[] datos = {"1", "tenis", "99", "1", "a"};
         ClubDeportivoAltoRendimiento clubBienCreado2TamAuto = new ClubDeportivoAltoRendimiento("univesidad de malaga", 100, 3);
@@ -70,16 +70,16 @@ public class ClubDeportivoAltoRendimientoTest {
         assertThrows(ClubException.class, () -> clubBienCreado2TamAuto.anyadirActividad(datos));
     }
 
-@Test 
-public void ClubAltoRendimientoIngresos(){
+    @Test 
+    public void ClubAltoRendimientoIngresos(){
 
-    //Arrange
-    //Act
-    double res = clubBienCreado.ingresos();
-    double cantidadNormal = 100*2 + 3*33; // hemos metido dos grupos, uno con 2 personas que pagan cada una 100 y otro grupo con 3 personas que pagan cada una 33
-    //Assert
-    assertEquals(res,cantidadNormal+(cantidadNormal*(3.0/100)));
+        //Arrange
+        //Act
+        double res = clubBienCreado.ingresos();
+        double cantidadNormal = 100*2 + 3*33; // hemos metido dos grupos, uno con 2 personas que pagan cada una 100 y otro grupo con 3 personas que pagan cada una 33
+        //Assert
+        assertEquals(res,cantidadNormal+(cantidadNormal*(3.0/100)));
 
-}
+    }
 
 }
