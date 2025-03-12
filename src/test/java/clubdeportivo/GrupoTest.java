@@ -16,6 +16,17 @@ public class GrupoTest {
         grupoBienCreado = new Grupo("1","tenis", 50, 1, 100);
     }
 
+    @Test
+    public void GrupoGetCodigoFunciona(){
+        assertEquals("1", grupoBienCreado.getCodigo());
+    }
+
+    @Test
+    public void GrupoHashChodeFunciona(){
+        assertEquals("1".hashCode() + "TENIS".hashCode(), grupoBienCreado.hashCode());
+    }
+
+
 
     @Test
     public void GrupoConNplazasMenorQue0(){
@@ -107,6 +118,24 @@ public class GrupoTest {
 		}finally{
             //Assert
             assertEquals(grupoBienCreado.getMatriculados(), 33 + matriculadosAntes);
+        }
+    }
+
+    @Test
+    public void GrupoEqualsConOtroTipo(){
+        assertEquals(false, grupoBienCreado.equals("otra cosa"));
+    }
+
+    @Test
+    public void GrupoEqualsBienHecho(){
+        try{        
+            //Arrange
+            Grupo grupo2 = new Grupo("1", "tenis", 20, 15, 30.0);
+            //Act
+            //Assert
+            assertEquals(true, grupoBienCreado.equals(grupo2));
+        } catch (Exception e){
+            e.printStackTrace();
         }
     }
 }
