@@ -138,4 +138,30 @@ public class GrupoTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void GrupoEqualsFallaCodigo(){
+        try{        
+            //Arrange
+            Grupo grupo2 = new Grupo("2", "tenis", 20, 15, 30.0);
+            //Act
+            //Assert
+            assertEquals(false, grupoBienCreado.equals(grupo2));
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void GrupoEqualsFallaActividad(){
+        try{        
+            //Arrange
+            Grupo grupo2 = new Grupo("1", "NoEsTenis", 20, 15, 30.0);
+            //Act
+            //Assert
+            assertEquals(false, grupoBienCreado.equals(grupo2));
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

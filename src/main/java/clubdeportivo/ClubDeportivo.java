@@ -20,7 +20,7 @@ public class ClubDeportivo {
 		grupos = new Grupo[n];
 	}
 
-	private int buscar(Grupo g) {
+	private int buscar(Grupo g) throws ClubException {
 		int i = 0;
 		while (i < ngrupos && !g.equals(grupos[i])) {
 			i++;
@@ -32,7 +32,12 @@ public class ClubDeportivo {
 	}
 
 	public void anyadirActividad(String[] datos) throws ClubException {
+		if (datos.length<5) { // ERROR ENCONTRADO, NO SE COMPROBABA SI DATOS ES MENOR QUE 5
+			throw new ClubException ("ERROR: faltan datos");
+		}
+
 		try {
+
 			int plazas = Integer.parseInt(datos[2]);
 			int matriculados = Integer.parseInt(datos[3]);
 			double tarifa = Double.parseDouble(datos[4]);
@@ -70,7 +75,7 @@ public class ClubDeportivo {
 
 	public void matricular(String actividad, int npersonas) throws ClubException {
 		int plazas = plazasLibres(actividad);
-		if (plazas < npersonas) {
+		if (plazas < npersonas || npersonas <= 0) { // ERROR: no se comprobaba que npersonas sea positivo mayor a 0
 			throw new ClubException("ERROR: no hay suficientes plazas libres para esa actividad en el club.");
 		}
 		int i = 0;

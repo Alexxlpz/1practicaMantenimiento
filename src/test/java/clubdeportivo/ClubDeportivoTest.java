@@ -30,7 +30,7 @@ public class ClubDeportivoTest {
     public void ClubDeportivoAnyadirDatosMenorQue5(){
         //Arrange
         String[] datos = {"1", "tenis", "150", "1"};
-        assertThrows(ArrayIndexOutOfBoundsException.class, () -> clubBienCreado.anyadirActividad(datos));
+        assertThrows(ClubException.class, () -> clubBienCreado.anyadirActividad(datos));
     }
 
     @Test 
@@ -201,5 +201,4 @@ public class ClubDeportivoTest {
             e.printStackTrace();
         }
     }
-
 }
