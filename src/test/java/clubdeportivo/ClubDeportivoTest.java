@@ -83,6 +83,19 @@ public class ClubDeportivoTest {
         }
     }
 
+    @Test
+    public void ClubDeportivoAnyadirActividadGrupoExistenteConMasMatriculados(){
+        try{
+            //Arrange
+            Grupo g = new Grupo("1", "tenis", 1, 0, 80.0);
+            //Act
+            //Assert
+            assertThrows(ClubException.class, () -> clubBienCreado.anyadirActividad(g));
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     @Test 
     public void ClubDeportivoIngresos(){
 

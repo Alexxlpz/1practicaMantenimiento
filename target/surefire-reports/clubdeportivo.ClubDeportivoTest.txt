@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: clubdeportivo.ClubDeportivoTest
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 s -- in clubdeportivo.ClubDeportivoTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.180 s -- in clubdeportivo.ClubDeportivoTest

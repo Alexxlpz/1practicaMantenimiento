@@ -57,6 +57,9 @@ public class ClubDeportivo {
 			grupos[ngrupos] = g;
 			ngrupos++;
 		} else { // El grupo ya existe --> modificamos las plazas
+			if(g.getPlazas() < grupos[pos].getMatriculados()){ // ERROR: si el grupo g tiene menos plazas que el viejo numero de participantes habra mas participantes que plazas, lo cual no podemos permitir 
+				throw new ClubException("ERROR: hay mas matriculados que plazas");
+			}
 			grupos[pos].actualizarPlazas(g.getPlazas());
 		}
 	}
