@@ -1,3 +1,7 @@
+/*
+ * Alejandro López Ortega
+ * Pablo Galvez Castillo
+*/
 package clubdeportivo;
 
 import java.util.StringJoiner;

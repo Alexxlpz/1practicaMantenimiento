@@ -1,3 +1,8 @@
+/*
+ * Alejandro López Ortega
+ * Pablo Galvez Castillo
+*/
+
 package clubdeportivo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
